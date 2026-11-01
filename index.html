@@ -483,23 +483,6 @@ main section > .wrap > .sec-head h2, main section > .wrap > .sec-head p, .hero-t
 .links small { word-break: break-all; }
 footer a[href^="mailto:"] { word-break: break-all; }
 /* ---- Elige tu sabor: más grande, al tamaño de la app ---- */
-.ad-phone { width: min(340px, 94%); }
-.ad-status { font-size: 14px; padding: 14px 28px 8px; }
-.ad-top { padding: 9px 14px; }
-.ad-brand img { height: 32px; }
-.ad-brand .wm { font-size: .98rem; }
-.ad-cart { font-size: 13px; padding: 4px 11px; }
-.ad-cart svg { width: 14px; height: 14px; }
-.ad-body { padding: 13px 14px 10px; gap: 6px; }
-.ad-body .ad-h { font-size: 1.55rem; line-height: 1.02; }
-.ad-body .ad-sub { font-size: .95rem; font-weight: 800; }
-.ad-grid { gap: 10px; margin-top: 6px; }
-.ad-pill { font-size: .68rem; padding: 3px 8px; top: 7px; right: 7px; }
-.ad-card b { font-size: .8rem; padding: 7px 8px 0; }
-.ad-add { font-size: .78rem; padding: 7px 0; margin: 6px 9px 9px; }
-.ad-nav { padding: 8px 8px 16px; }
-.ad-nav span { font-size: .68rem; }
-.ad-nav svg { width: 20px; height: 20px; }
 #menu .sec-head h2 { font-size: clamp(2.5rem, 8vw, 4.2rem); line-height: 1; }
 #menu .sec-head p { font-size: 1.15rem; font-weight: 600; max-width: 38ch; }
 .menuposter { max-width: 640px; }
@@ -507,28 +490,15 @@ footer a[href^="mailto:"] { word-break: break-all; }
 #menuGrid .item .desc { font-size: 1.02rem; }
 @media (max-width: 560px) { #menuGrid .item h3 { font-size: 1.2rem; } #menuGrid .item .desc { font-size: .92rem; } }
 
-/* ---- Pantalla de la app en rectángulo horizontal ---- */
-.app-ad { grid-template-columns: minmax(0, 1fr); }
-.app-ad > * { min-width: 0; }
-.app-ad .ad-phone { min-width: 0; }
-.app-ad { grid-template-columns: 1fr; }
-.app-ad .ad-phone { width: min(980px, 100%); max-width: 100%; aspect-ratio: auto; padding: 10px; border-radius: 30px; justify-self: center; }
-.ad-notch { display: none; }
-.ad-screen { border-radius: 22px; }
-.ad-body { overflow: visible; padding: 16px 18px 12px; }
-.ad-body .ad-h { font-size: clamp(1.5rem, 3.6vw, 2.3rem); }
-.ad-body .ad-sub { font-size: clamp(1rem, 2.2vw, 1.3rem); }
-.ad-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 10px; }
-.ad-card { border-radius: 18px; }
-.ad-art { aspect-ratio: 1 / 1; }
-.ad-card b { font-size: clamp(.85rem, 1.6vw, 1.1rem); padding: 9px 10px 0; }
-.ad-add { font-size: clamp(.78rem, 1.4vw, .98rem); padding: 9px 0; margin: 8px 10px 11px; }
-.ad-pill { font-size: .8rem; padding: 4px 10px; }
-.ad-nav span { font-size: clamp(.68rem, 1.3vw, .85rem); }
-@media (max-width: 760px) {
-  .ad-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 8px; }
-  .ad-card { flex: 0 0 168px; scroll-snap-align: start; }
-}
+/* ---- Elige tu sabor: pantalla rectangular grande ---- */
+#menu > .wrap { max-width: 1180px; background: rgba(214,235,250,.97); border: 10px solid #1E1030; border-radius: 34px; padding: clamp(18px, 3.5vw, 40px); box-shadow: 0 0 0 2px rgba(255,248,250,.14), 0 24px 44px rgba(0,0,0,.30); }
+#menu .sec-head { justify-content: flex-start; align-items: flex-start; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+#menu .sec-head h2 { font-size: clamp(2.8rem, 9vw, 5rem); line-height: .95; }
+#menu .sec-head p { font-size: clamp(1.1rem, 2.4vw, 1.5rem); max-width: 60ch; }
+#menu .menuposter { max-width: 760px; margin-bottom: 26px; }
+#menuGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 900px) { #menuGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { #menu > .wrap { border-width: 7px; border-radius: 26px; padding: 16px 12px; } #menuGrid { gap: 10px; } }
 </style>
 </head>
 <body>
