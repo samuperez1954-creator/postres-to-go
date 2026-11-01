@@ -506,6 +506,29 @@ footer a[href^="mailto:"] { word-break: break-all; }
 #menuGrid .item h3 { font-size: 1.5rem; }
 #menuGrid .item .desc { font-size: 1.02rem; }
 @media (max-width: 560px) { #menuGrid .item h3 { font-size: 1.2rem; } #menuGrid .item .desc { font-size: .92rem; } }
+
+/* ---- Pantalla de la app en rectángulo horizontal ---- */
+.app-ad { grid-template-columns: minmax(0, 1fr); }
+.app-ad > * { min-width: 0; }
+.app-ad .ad-phone { min-width: 0; }
+.app-ad { grid-template-columns: 1fr; }
+.app-ad .ad-phone { width: min(980px, 100%); max-width: 100%; aspect-ratio: auto; padding: 10px; border-radius: 30px; justify-self: center; }
+.ad-notch { display: none; }
+.ad-screen { border-radius: 22px; }
+.ad-body { overflow: visible; padding: 16px 18px 12px; }
+.ad-body .ad-h { font-size: clamp(1.5rem, 3.6vw, 2.3rem); }
+.ad-body .ad-sub { font-size: clamp(1rem, 2.2vw, 1.3rem); }
+.ad-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 10px; }
+.ad-card { border-radius: 18px; }
+.ad-art { aspect-ratio: 1 / 1; }
+.ad-card b { font-size: clamp(.85rem, 1.6vw, 1.1rem); padding: 9px 10px 0; }
+.ad-add { font-size: clamp(.78rem, 1.4vw, .98rem); padding: 9px 0; margin: 8px 10px 11px; }
+.ad-pill { font-size: .8rem; padding: 4px 10px; }
+.ad-nav span { font-size: clamp(.68rem, 1.3vw, .85rem); }
+@media (max-width: 760px) {
+  .ad-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 8px; }
+  .ad-card { flex: 0 0 168px; scroll-snap-align: start; }
+}
 </style>
 </head>
 <body>
