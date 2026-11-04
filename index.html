@@ -1176,7 +1176,8 @@ footer a[href^="mailto:"] { word-break: break-all; }
       '<button type="button" id="copyMsg" class="btn" style="margin-top:8px;width:100%;border:1.5px solid var(--line);background:#fff">' + (en ? 'Copy order and send it to ' : 'Copiar pedido y enviarlo al ') + rc.phone + '</button>';
     el.hidden = false; try { el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); } catch (e) {}
     saved.then(function (j) {
-      var ok = $('#orderOk'); if (!ok || !j || !j.ok) return;
+      var ok = $('#orderOk'); if (!ok) return;
+      if (!j || !j.ok) { ok.style.color = '#B45309'; ok.textContent = '⚠️ ' + (en ? 'Could not save the order in our panel. Please send the WhatsApp message so we get it.' : 'No se pudo guardar el pedido en el panel. Envía el mensaje de WhatsApp para que nos llegue.'); return; }
       ok.textContent = '✅ ' + (en ? 'Order received' : 'Pedido recibido') + (j.number ? ' #' + j.number : '') + ' · Ref ' + ref + ' — ' + (en ? 'send the WhatsApp message to confirm.' : 'envía el mensaje de WhatsApp para confirmar.');
     });
     $('#copyMsg').onclick = function () {
